@@ -27,9 +27,15 @@
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    
 
     <title>Contact Julo Photos</title>
 </head>
+<body>
 <!--Accueil-->
 <section id="nav">
         <nav id="navigation">
@@ -42,23 +48,28 @@
         </nav>   
 </section>
 <section id="contacts">
-    <div class="container">
-        <div class="container text-center " id="contact">
-        <?php
+<?php
         if(isset($_POST['mail'])){
-            $to = "jcnockaert@hotmail.fr";
+            $to = "qdlr@hotmail.fr";
             $from = $_POST['mail'];
             $object = $_POST['objet'];
             $message = $_POST['message'];
             mail($to, $object, $message, $from);
             ?>
-
-            <div class="alert alert-success" role="alert">
-                Message envoyé !
-            </div>
+            <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+            <strong>Votre message a bien été envoyé !</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>           
         
-        <?php } ?>                                                
+        <?php } ?>              
+<div class="contacter">
+    <div class="container">
+        <div class="container text-center" id="contact">
+                                         
             <h2>Formulaire de contact</h2>
+            
             <form method="POST" action="#" id="form">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse mail :</label>
@@ -77,11 +88,15 @@
                     <textarea class="form-control" id="message" rows="3" name="message"></textarea>
                 </div>  
                 <button type="submit" class="button-1">Valider</button>
-            </form>
+            </form>*
+            </div>
         </div>
         
     </div>
 </section>
+<!-- <script>
+$('.alert').alert('close')
+</script> -->
 <footer>
     <a href="#accueil">
         <span <i class="fas fa-chevron-up"></i></span>                

@@ -69,7 +69,7 @@
             </div>
         </div>
     </section>
-
+  
     <!-- Section Tarifs -->
     <section id="tarifs">
         <h2>Exemples de Tarifs</h2>
@@ -131,7 +131,7 @@
             </div>
         </div>
     </section>
-    
+
     <footer>
         <a href="#accueil">
             <span <i class="fas fa-chevron-up"></i><h5>© Julo Photos </h5></span>         

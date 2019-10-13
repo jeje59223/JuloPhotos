@@ -441,13 +441,12 @@ footer h5
     font-size: 2rem;   
 }
 #contacts{
-    padding-top: 8rem;
+    padding-top: 10rem;
     background: url('../ressources/julo9.png');
     height: 80rem;
     background-size: cover;
     background-position: center;
-    position: relative;
-    
+    position: relative;   
 }
 label {
     font-size: 3rem;
@@ -497,4 +496,14 @@ label {
     background: #fff !important;
     color: rgb(212, 220, 69)!important;
     text-decoration: none !important;
+}
+
+.contacter {
+    background: rgba(55,55,55,0.5) !important;
+    width: 80rem;
+    text-align: center;
+    margin: auto;
+    border: 1px solid rgb(255, 225, 125);
+    margin-top: 5rem;
+    border-radius: 30px;
 }
