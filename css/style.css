@@ -1,0 +1,500 @@
+html{
+    font-size: 10px;
+    scroll-behavior: smooth !important;
+}
+
+body{
+    margin: 0;
+    font-family: 'Lato', 'sans-serif';
+    background-color: #f7f7f7;
+}
+
+/* Navigation */
+
+#navigation{
+    position: fixed; /* menu reste fixe */
+    z-index: 40; /* permet de faire des couches */
+    width: 100%; /* largeur 100% */
+    background-color: #f0Ead6;
+    text-align: center;
+    height: 10rem; /* hauteur de 10rem = 100px */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 55% 70%, 50% 90%, 45% 70%, 0% 70%);
+    transition: all 0.4s ease-in-out; /* transition de 0.4s et rapide au début normal au milieux et rapide a la fin */
+
+}
+
+#navigation a{
+    text-decoration: none;
+    font-size: 3rem;
+    padding: 1rem 5rem;
+    line-height: 6.5rem;
+    font-family: 'Kaushan Script';
+    margin: auto;
+    color: #373737;
+}
+
+#navigation a:active{
+    font-size: 4rem;    
+}
+
+.icon{
+    display: none;
+}
+
+/* Header accueil */
+
+header{
+    height: 100vh; /* ça prend toute la hauteur de l'écran */
+    width: 100%;
+    background: url("../ressources/julo7.jpg"); /* affiche l'image */
+    background-size: cover; /* l'image ne se répéte pas */
+    background-position: center; /* on centre l'image */
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+    color: white;
+    position: relative;
+    top: 30rem;
+    font-family: "Kaushan Script";
+    font-size: 11rem;
+    text-shadow: black 1px 0 20px;
+}
+
+header h2{
+    text-align: center;
+    margin: 0;
+    color: #f7f7f7;
+    font-weight: bold;
+    position: relative;
+    top: 32rem;
+    font-family: "Abril Fatface";
+    font-size: 5rem;
+    letter-spacing: 0.2rem;
+    text-shadow: black 1px 0 10px;
+}
+
+header #arrow{
+    color: black;
+    height: 8rem;
+    width: 8rem;
+    position: absolute; /* permet d'utiliser top left mais le retire du flux normal */
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    line-height: 8rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 0 0 #fff;
+    animation: pulse 1.3s infinite; /* on crée l'animation sur l'icon photo*/
+}
+
+@keyframes pulse{ /* on précise ce qu'on veut comme animation sur l'icon photo */
+    to{
+        box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.01);
+    }
+}
+
+/* Premiere section About 3 photos */
+
+.section about{
+    background-color: #f7f7f7;
+    padding-bottom: 10rem;
+}
+
+.centerH {
+    text-align: center;
+    margin-bottom: 8rem;
+}
+.titreAbout{
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, #373737, #c0b283); /* degradé sur titre */
+    -webkit-background-clip: text; /* pour faire disparaitre le background */
+    background-clip: text; /* pour faire disparaitre le background */
+    color: transparent; /* faire apparaitre le degradé */
+    letter-spacing: 0.2rem;
+    padding-top: 5rem;
+}
+.row{
+    max-width: 114rem;
+    margin: 0 auto;
+}
+.titreAbout {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, #373737, rgb(208, 177, 76));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    padding-top: 5rem;
+
+}
+
+.row {
+    max-width:114rem;
+    margin: 0 auto;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row [class^="col-"] {
+    float: left;
+}
+
+.row [class^="col-"]:not(:last-child) {
+    margin-right: 6rem;
+}
+
+.row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+}
+
+.sousTitreAbout {
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem!important;
+    margin-left: 3rem;
+}
+
+.paragraphe {
+    font-size: 1.9rem;
+    margin-left: 3rem;
+}
+
+.paragraphe:not(:last-child) {
+    margin-bottom: 3rem;
+}
+.composition {
+    position: relative;
+}
+.composition_photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.4);
+    /* border-radius: 1px; */
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 0;
+}
+.composition_photo--3 {
+    left: 0;
+    top: -2rem;
+}
+.composition_photo--1 {
+    right: 0;
+    top: 2rem;
+}
+.composition_photo--2 {
+    left: 20%;
+    top: 10rem;
+}
+.composition_photo:hover {
+    outline: 1rem solid #c0b283;
+    transform: scale(1.05) translate(-0.5rem);
+    box-shadow: 0 2.5rem 4rem rgb(0,0,0,0.5);
+    z-index: 30;
+}
+.composition:hover .composition_photo:not(:hover) {
+    transform: scale(0.95);
+}
+
+/* Section tarifs */
+
+#tarifs {
+    border-top: 1px dashed rgb(209, 174, 59);
+}
+#tarifs h2 {
+    text-align: center;
+    font-size: 5.5rem;
+    background: #f7f7f7;
+    background-image: linear-gradient(to right, #000000,  rgb(250, 218, 112));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    padding-top: 4rem;
+}
+
+#containerflex {
+    background: #f7f7f7;
+    width: 100%;
+    height: 60rem;
+    display: flex; /* pour utiliser flexbox */
+    align-items: center; /* utilisation de flexbox */
+    justify-content: center; /* utilisation de flexbox */
+    padding-bottom: 8rem;
+}
+
+.flexCards {
+    width: 30rem;
+    height: 45rem;
+    margin: 2rem;
+    transition: all 0.2s ease-in;
+    
+}
+
+.flexCards:nth-child(1){ /* on cible la card */
+    border: 1px dashed #373737; /* on lui met une bordure */
+}
+.flexCards:nth-child(2){
+    border: none; /* ici on enlève la bordure */
+}
+.flexCards:nth-child(3){
+    border: 1px dashed #373737;
+}
+
+.head {
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+    background: #F0Ead6;
+    color: #373737;
+}
+
+.head p {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 10rem;
+    font-family: 'Abril Fatface';
+}
+
+.contenu {
+    text-align: center;
+    margin: auto;
+    font-size: 1.6rem;
+    background: #f0Ead6;
+    height: 6rem;
+    line-height: 6rem;
+}
+.prix {
+    margin: 0;
+    height: 11rem;
+    background: #F0Ead6;
+}
+.prix p {
+    margin: 0 auto;
+    font-size: 5rem;
+    text-align: center;
+    line-height: 11rem;
+    font-family: 'Abril Fatface';
+}
+
+.flexCards:nth-child(2) .head {
+    background: #373737;
+    color: #f0Ead6;
+}
+.flexCards:nth-child(2) .contenu {
+    background: #373737;
+    color: #f0Ead6;
+}.flexCards:nth-child(2) .prix {
+    background: #373737;
+    color: #f0Ead6;
+}
+
+.flexCards:hover {
+    transform: scale(1.05);
+}
+
+/* Section Phrase Slide */
+
+#phrasesSlide {
+    height: 60rem;
+    width: 100%;
+    border-top: 1px dashed rgb(209,174,59);
+    background: url('../ressources/julo2.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+.cadre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110rem;
+    height: 40rem;
+    transform: translate(-50%,-50%);
+    border-radius: 12px;
+    background: rgba(55,55,55,0.5);
+    color: white;
+}
+
+.centre {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -2.25rem;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 4.5rem;
+    text-align: center;
+    line-height: 45px;
+    
+}
+
+.carousel .changeHidden{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    height: 13rem;
+    line-height: 13rem;
+    width: 100rem;
+    overflow: hidden;
+
+}
+
+.carousel .changeHidden .contenant {
+
+    position: relative;
+    animation: carousel 8s ease-in-out infinite;
+
+}
+
+.carousel .changeHidden .element {
+    font-weight: 700;
+    font-size: 8rem;
+
+}
+
+@keyframes carousel {
+    0%, 20% {
+        transform: translateY(0);
+    }
+    25%, 45% {
+        transform: translateY(-13rem);
+    }
+    50%, 70% {
+        transform: translateY(-26rem);
+    }
+    75%, 95% {
+        transform: translateY(-39rem);
+    }
+    100% {
+        transform: translateY(-52rem);
+    }
+}
+
+/* Contact */
+
+#contact h2 {
+    text-align: center;
+    font-size: 5.5rem;
+    background: #f7f7f7;
+    background-image: linear-gradient(to right, #f1e1e1,  rgb(255, 225, 125));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgb(255, 225, 125);
+    margin: 0;
+    padding-top: 4rem;
+    text-shadow: black 1px 0 30px;
+
+}
+
+footer {
+    background: #333;
+    padding: 0px 0 40px;
+    text-align: center;
+   
+}
+.fa-chevron-up
+{
+    font-size: 25px;
+    margin: 20px;
+    color: #F0Ead6;
+    height: 30px;
+}
+.fa-chevron-up:hover
+{
+    font-size: 35px;
+    margin: 20px;
+    color:rgb(209,174,59);
+    height: 20px;
+}
+footer h5
+{
+    color: #fff;
+    font-weight: normal;
+    text-decoration: none; 
+    font-size: 2rem;   
+}
+#contacts{
+    padding-top: 8rem;
+    background: url('../ressources/julo9.png');
+    height: 80rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    
+}
+label {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 1px 1px 2px black , 0 0 1em rgb(255, 225, 125), 0 0 0.2em rgb(255, 225, 125);
+}
+#form{
+    margin-top: 6rem;
+}
+
+
+
+.button-1
+{
+    animation-name: saut;
+    animation-duration: 0.5s;
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes saut
+{
+    0%{
+        transition: all 200ms ease-in;
+        transform: scale(1);
+    }
+    100%{
+        transition: all 200ms ease-in;
+        transform: scale(1.2);
+    }
+}
+.button-1
+{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white !important;
+    border: 1px solid white !important;
+    display: inline-block !important;
+    margin-top: 20px;
+    padding: 18px 50px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in 0s;
+    background-color: rgb(255, 225, 125);
+}
+.button-1:hover
+{
+    background: #fff !important;
+    color: rgb(212, 220, 69)!important;
+    text-decoration: none !important;
+}
